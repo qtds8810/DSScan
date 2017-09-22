@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSScanViewController" customModule="DSScan" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndictorView" destination="N97-9J-ucF" id="pYI-hX-XDb"/>
+                <outlet property="scanPaneImageView" destination="0o0-vS-I1W" id="exA-eU-68S"/>
+                <outlet property="scanPaneImageViewConsW" destination="BJf-v4-38T" id="dO0-bD-iA1"/>
+                <outlet property="tipLabel" destination="wdc-XN-5Xz" id="KcV-97-wu0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scancode_box" translatesAutoresizingMaskIntoConstraints="NO" id="0o0-vS-I1W">
+                    <rect key="frame" x="170" y="286" width="35" height="35"/>
+                    <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="BJf-v4-38T"/>
+                        <constraint firstAttribute="width" secondItem="0o0-vS-I1W" secondAttribute="height" multiplier="1:1" id="tY1-nN-ke0"/>
+                    </constraints>
+                </imageView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N97-9J-ucF">
+                    <rect key="frame" x="169.5" y="285" width="37" height="37"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将二维码/条形码放入框内，即可自动扫描" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdc-XN-5Xz">
+                    <rect key="frame" x="61.5" y="329" width="252.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13.5"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlX-Ju-RyO" userLabel="底部view">
+                    <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUN-5b-oUD">
+                            <rect key="frame" x="55" y="0.0" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="NUN-5b-oUD" secondAttribute="height" multiplier="1:1" id="rr9-UU-p8Z"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <inset key="titleEdgeInsets" minX="-29" minY="40" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="17" minY="-10" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="打开手电筒" image="qrScan_light_off">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" title="关闭手电筒" image="qrScan_light_on">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="lightSwitchBtnClick:" destination="-1" eventType="touchUpInside" id="g0W-4j-9Rl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lze-Ct-jVw">
+                            <rect key="frame" x="242" y="0.0" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Lze-Ct-jVw" secondAttribute="height" multiplier="1:1" id="gZi-XM-E2D"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <inset key="titleEdgeInsets" minX="-29" minY="40" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="17" minY="-10" maxX="5" maxY="0.0"/>
+                            <state key="normal" title="输入车牌号" image="qrScan_carNumber">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="carNumberBtnClick" destination="-1" eventType="touchUpInside" id="HvM-z7-bzT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="Lze-Ct-jVw" firstAttribute="centerX" secondItem="GlX-Ju-RyO" secondAttribute="centerX" multiplier="3:2" id="Fm3-pd-bVL"/>
+                        <constraint firstItem="NUN-5b-oUD" firstAttribute="centerX" secondItem="GlX-Ju-RyO" secondAttribute="centerX" multiplier="1:2" constant="1" id="Fyq-1I-QQD"/>
+                        <constraint firstItem="Lze-Ct-jVw" firstAttribute="top" secondItem="GlX-Ju-RyO" secondAttribute="top" id="JUF-v8-3af"/>
+                        <constraint firstItem="NUN-5b-oUD" firstAttribute="top" secondItem="GlX-Ju-RyO" secondAttribute="top" id="LoH-VZ-Myk"/>
+                        <constraint firstAttribute="bottom" secondItem="Lze-Ct-jVw" secondAttribute="bottom" id="LxH-UI-1Fn"/>
+                        <constraint firstAttribute="bottom" secondItem="NUN-5b-oUD" secondAttribute="bottom" id="gMU-an-WD2"/>
+                        <constraint firstAttribute="height" constant="80" id="n1X-8J-c5l"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="N97-9J-ucF" firstAttribute="centerX" secondItem="0o0-vS-I1W" secondAttribute="centerX" id="HlX-KZ-gvL"/>
+                <constraint firstItem="GlX-Ju-RyO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bFR-Fe-ct7"/>
+                <constraint firstItem="wdc-XN-5Xz" firstAttribute="centerX" secondItem="0o0-vS-I1W" secondAttribute="centerX" id="cn5-dW-XrH"/>
+                <constraint firstItem="0o0-vS-I1W" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-30" id="crK-pW-vPA"/>
+                <constraint firstItem="wdc-XN-5Xz" firstAttribute="top" secondItem="0o0-vS-I1W" secondAttribute="bottom" constant="8" id="d72-bc-ATz"/>
+                <constraint firstItem="0o0-vS-I1W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dTE-62-iPb"/>
+                <constraint firstAttribute="trailing" secondItem="GlX-Ju-RyO" secondAttribute="trailing" id="kf0-lB-icU"/>
+                <constraint firstItem="N97-9J-ucF" firstAttribute="centerY" secondItem="0o0-vS-I1W" secondAttribute="centerY" id="nkv-So-RqI"/>
+                <constraint firstAttribute="bottom" secondItem="GlX-Ju-RyO" secondAttribute="bottom" id="pZM-3V-cLm"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="qrScan_carNumber" width="29" height="29"/>
+        <image name="qrScan_light_off" width="29" height="29"/>
+        <image name="qrScan_light_on" width="29" height="29"/>
+        <image name="scancode_box" width="260" height="260"/>
+    </resources>
+</document>
